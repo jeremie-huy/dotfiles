@@ -1,0 +1,18 @@
+[user]
+	email = jeremie.huy@gmail.com
+	name = Jeremie Huy
+[push]
+	default = current
+[core]
+	autocrlf = input
+	editor = vim
+[alias]
+        purr = pull --rebase
+	delete-merged-branches = !git fetch --all --prune && git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d && git checkout -
+	st = !git status -sbuno
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	unadd = reset HEAD --
+	wip = !git add -u && git add . && git commit -m"WIP"
+        unwip = !git reset --soft HEAD~ && git unadd
+[color]
+	ui = auto

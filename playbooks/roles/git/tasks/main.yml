@@ -1,0 +1,8 @@
+- name: deploy .gitconfig file
+  hosts: local
+
+  tasks:
+    - name: screen - deploy .gitconfig file
+      template:
+        src: ../templates/.gitconfig.j2
+        dest: ~/.gitconfig

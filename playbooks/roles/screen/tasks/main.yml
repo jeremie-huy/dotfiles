@@ -1,0 +1,8 @@
+- name: deploy .screenrc file
+  hosts: all
+
+  tasks:
+    - name: screen - deploy .screenrc file
+      template:
+        src: ../templates/.screenrc.{{ env }}.j2
+        dest: ~/.screenrc
